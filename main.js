@@ -17,6 +17,9 @@ io.sockets.on('connection', function (socket) {
 	socket.on('start', function (options) {
 		console.log(options);
 
+		// Sanitize options
+		options = JSON.parse(JSON.stringify(options));
+
 		loadtest.loadTest(options, function (err, result) {
 			if (err) {
 				socket.emit('error', err);
