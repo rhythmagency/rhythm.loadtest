@@ -1,0 +1,79 @@
+extends _layouts/master
+
+block content
+	.row
+		.col-sm-12
+			h1 Rhythm Load Tester
+
+	form
+		.row
+			.col-sm-6
+				.input-group
+					span.input-group-addon
+						i.fa.fa-globe
+					input.form-control(type='url', name='url', placeholder='URL*', required, data-toggle='tooltip', data-placement='top', title='The URL to invoke.')
+
+			.col-sm-6
+				.input-group
+					span.input-group-addon
+						i.fa.fa-chevron-circle-right
+					input.form-control(type='number', name='maxRequests', placeholder='Max Requests', min='0', max='1000', data-toggle='tooltip', data-placement='top', title='A max number of requests; after they are reached the test will end.')
+
+		.row
+			.col-sm-6
+				.input-group
+					span.input-group-addon
+						i.fa.fa-code
+					input.form-control(type='text', name='cookies', placeholder='Cookies', data-toggle='tooltip', data-placement='top', title='An array of cookies to send. Each cookie should be a string of the form name=value.')
+
+			.col-sm-6
+				.input-group
+					span.input-group-addon
+						i.fa.fa-clock-o
+					input.form-control(type='number', name='maxSeconds', placeholder='Max Seconds', min='0', max='1000', data-toggle='tooltip', data-placement='top', title='Max number of seconds to run the tests.')
+
+		.row
+			.col-sm-6
+				.input-group
+					span.input-group-addon
+						i.fa.fa-code
+					input.form-control(type='text', name='headers', placeholder='Headers', data-toggle='tooltip', data-placement='top', title='A map of headers. Each header should be an entry in the map with the given value as a string. If the value is an array, several headers with the same key will be sent.')
+
+			.col-sm-6
+				.input-group
+					span.input-group-addon
+						i.fa.fa-chevron-circle-right
+					input.form-control(type='number', name='concurrency', placeholder='Concurrency', min='0', max='1000', data-toggle='tooltip', data-placement='top', title='How many clients to start in parallel.')
+
+		.row
+			.col-sm-6
+				.input-group
+					span.input-group-addon
+						i.fa.fa-code
+					input.form-control(type='text', name='contentType', placeholder='Content Type', data-toggle='tooltip', data-placement='top', title='The MIME type to use for the body. Default content type is text/plain.')
+
+			.col-sm-6
+				.input-group
+					span.input-group-addon
+						i.fa.fa-clock-o
+					input.form-control(type='number', name='requestsPerSecond', placeholder='Requests Per Second', min='0', max='1000', data-toggle='tooltip', data-placement='top', title='How many requests each client will send per second.')
+
+		.row
+			.col-sm-6
+				.input-group
+					span.input-group-addon
+						i.fa.fa-code
+					input.form-control(type='text', name='body', placeholder='Body', data-toggle='tooltip', data-placement='top', title='The contents to send in the body of the message, for POST or PUT requests. Can be a string or an object (which will be converted to JSON).')
+
+			.col-sm-6
+				select(name='method', placeholder='Method', data-toggle='tooltip', data-placement='top', title='The method to use: POST, PUT. Default: GET.', data-style='btn-primary')
+					option(selected) GET
+					option POST
+					option PUT
+
+		.row
+			.col-sm-12
+				input#submit.btn.btn-primary(type='submit', data-loading-text='Loading...', data-reset-text='Submit', value='Submit')
+
+	.row
+		.col-sm-12.results

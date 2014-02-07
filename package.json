@@ -1,0 +1,39 @@
+{
+	"name": "rhythm.loadtest",
+	"version": "0.0.1",
+	"description": "Website for rhythm.loadtest",
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"lodash": "~2.4.1",
+		"loadtest": "~0.2.8",
+		"harp": "*",
+		"connect": "~2.12.0",
+		"express": "~3.4.8",
+		"socket.io": "~0.9.16",
+		"jquery-browser": "~1.10.2-1",
+		"socket.io-client": "~0.9.16",
+		"jade": "~1.1.5"
+	},
+	"devDependencies": {
+		"grunt": "*",
+		"grunt-contrib-cssmin": "*",
+		"grunt-contrib-jade": "*",
+		"grunt-contrib-less": "*",
+		"grunt-contrib-sass": "*",
+		"grunt-contrib-uglify": "*",
+		"grunt-contrib-watch": "*",
+		"grunt-browserify": "*",
+		"grunt-concurrent": "*",
+		"grunt-cssc": "*",
+		"grunt-surround": "*",
+		"grunt-text-replace": "*",
+		"browserify": "*",
+		"matchdep": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:rhythmagency/rhythm.loadtest.git"
+	},
+	"main": "main.js",
+}
